@@ -18,7 +18,7 @@
   limitations under the License.
 
 -->
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:db="http://docbook.org/ns" xmlns:xi="http://www.w3.org/2001/XInclude">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:db="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude">
 
 	<!-- <para> -->
 	<xsl:template match="//db:para" mode="body">

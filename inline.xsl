@@ -18,7 +18,7 @@
   limitations under the License.
 
 -->
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:db="http://docbook.org/ns" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:db="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink">
 	
 	<!-- Bibliography inlines -->
 
@@ -52,7 +52,7 @@
 			<xsl:call-template name="html.inline.attrs" />
 			<xsl:for-each select="node()">
 				<xsl:choose>
-					<xsl:when test="namespace-uri() = 'http://docbook.org/ns' and local-name() = 'shortcut'" />
+					<xsl:when test="namespace-uri() = 'http://docbook.org/ns/docbook' and local-name() = 'shortcut'" />
 					<xsl:when test="self::*">
 						<xsl:apply-templates select="." mode="body" />
 						<xsl:if test="position() != last()">

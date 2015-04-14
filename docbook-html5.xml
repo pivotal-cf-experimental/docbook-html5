@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<refentry xml:id="docbook-html5" xmlns="http://docbook.org/ns" version="5.0" xml:lang="en-gb" xmlns:xlink="http://www.w3.org/1999/xlink">
+<refentry xml:id="docbook-html5" xmlns="http://docbook.org/ns/docbook" version="5.0" xml:lang="en-gb" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<info>
 		<productname>Research &amp; Education Space</productname>
 		<author>
@@ -18,13 +18,13 @@
 			<para>Copyright © 2014 BBC.</para>
 			<para>docbook-html5 is licensed under the terms of the <link xlink:href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</link> and is available to browse or download via <link xlink:href="https://github.com/bbcarchdev/docbook-html5">GitHub</link>.</para>
 			<para>The text of this document is licensed under the terms of the <link xlink:href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/2/">Open Government Licence, v2.0</link>.</para>
-		</legalnotice>						
+		</legalnotice>
 	</info>
-	
+
 	<refmeta>
 		<refentrytitle>docbook-html5</refentrytitle>
 	</refmeta>
-	
+
 	<refsect1>
 		<title>Introduction</title>
 		<para>
@@ -45,7 +45,7 @@
 			package thanks to to their relative simplicity.
 		</para>
 	</refsect1>
-	
+
 	<refsect1>
 		<title>Usage</title>
 		<para>
@@ -67,7 +67,7 @@
 			To use docbook-html5 locally, simply specify the filesystem path to
 			<filename>docbook-html5.xsl</filename> in place of the URL:—
 		</para>
-		<screen><prompt>$ </prompt> <userinput>xsltproc --xinclude --nonet -o <replaceable>OUTPUT.html</replaceable> http://bbcarchdev.github.io/docbook-html5/docbook-html5.xsl <replaceable>INPUT.xml</replaceable></userinput></screen>		
+		<screen><prompt>$ </prompt> <userinput>xsltproc --xinclude --nonet -o <replaceable>OUTPUT.html</replaceable> http://bbcarchdev.github.io/docbook-html5/docbook-html5.xsl <replaceable>INPUT.xml</replaceable></userinput></screen>
 		<para>
 			When using the stylesheets locally, the <option>--nonet</option> option may
 			be supplied, which prevents <command>xsltproc</command> from performing any
@@ -97,7 +97,7 @@
 						into the output document’s <tag class="element">head</tag> element,
 						and typically contains <tag class="element">link</tag> and
 						<tag class="element">meta</tag> elements. See
-						<link xlink:href="https://github.com/bbcarchdev/docbook-html5/blob/gh-pages/links-sample.xml"><filename>links-sample.xml</filename></link> 
+						<link xlink:href="https://github.com/bbcarchdev/docbook-html5/blob/gh-pages/links-sample.xml"><filename>links-sample.xml</filename></link>
 						for an example. Note that the URL specified will be interpreted as
 						relative to the stylesheets URL, and so you may need to specify
 						an absolute <literal>file:///</literal> URL.
@@ -112,7 +112,7 @@
 						into the output document’s global <tag class="element">nav</tag> element
 						(which appears, if this parameter is specified, within the
 						document-level <tag class="element">header</tag>). See
-						<link xlink:href="https://github.com/bbcarchdev/docbook-html5/blob/gh-pages/nav-sample.xml"><filename>nav-sample.xml</filename></link> 
+						<link xlink:href="https://github.com/bbcarchdev/docbook-html5/blob/gh-pages/nav-sample.xml"><filename>nav-sample.xml</filename></link>
 						for an example. Note that the URL specified will be interpreted as
 						relative to the stylesheets URL, and so you may need to specify
 						an absolute <literal>file:///</literal> URL.
@@ -134,7 +134,7 @@
 			</varlistentry>
 		</variablelist>
 	</refsect1>
-	
+
 	<refsect1>
 		<title>Example</title>
 		<screen><prompt>$ </prompt> <userinput>xsltproc --xinclude \
