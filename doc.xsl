@@ -43,17 +43,17 @@
 		  </xsl:choose>
 		</xsl:variable>
 		<xsl:call-template name="html.doctype" />
-		<xsl:text disable-output-escaping="yes"><![CDATA[
-<html>
-	<head>
-]]></xsl:text>
+		<xsl:text disable-output-escaping="yes">
+&lt;html>
+	&lt;head>
+</xsl:text>
 		<xsl:call-template name="html.meta" />
 		<title><xsl:value-of select="$doc.title" /></title>
 		<xsl:call-template name="html.links" />
 		<xsl:call-template name="html.scripts" />
-		<xsl:text disable-output-escaping="yes"><![CDATA[
-	</head>
-]]></xsl:text>
+		<xsl:text disable-output-escaping="yes">
+	&lt;/head>
+</xsl:text>
 		<xsl:choose>
 			<xsl:when test="/db:book">
 				<xsl:call-template name="html.body">
@@ -76,9 +76,9 @@
 				</xsl:message>
 			</xsl:otherwise>
 		</xsl:choose>
-		<xsl:text disable-output-escaping="yes"><![CDATA[
-</html>
-]]></xsl:text>
+		<xsl:text disable-output-escaping="yes">
+&lt;/html>
+</xsl:text>
 	</xsl:template>
 	
 	<!-- Generate the HTML <body> -->

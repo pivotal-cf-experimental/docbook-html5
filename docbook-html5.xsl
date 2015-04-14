@@ -29,16 +29,16 @@
 
 	<!-- HTML5 doctype -->
 	<xsl:template name="html.doctype">
-		<xsl:text disable-output-escaping="yes"><![CDATA[<!DOCTYPE html>]]></xsl:text>
+		<xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html></xsl:text>
 	</xsl:template>
 	
 	<!-- HTML5 meta elements -->
 	<xsl:template name="html.meta">
-		<xsl:text disable-output-escaping="yes"><![CDATA[
-			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-			<meta charset="utf-8" />
-			<!--[if lt IE 9]><script>document.createElement('header');document.createElement('nav');document.createElement('section');document.createElement('article');document.createElement('aside');document.createElement('footer');</script><![endif]-->
-		]]></xsl:text>
+		<xsl:text disable-output-escaping="yes">
+			&lt;meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			&lt;meta charset="utf-8" />
+			&lt;!--[if lt IE 9]>&lt;script>document.createElement('header');document.createElement('nav');document.createElement('section');document.createElement('article');document.createElement('aside');document.createElement('footer');&lt;/script>&lt;![endif]-->
+		</xsl:text>
 	</xsl:template>
 
 	<!-- HTML5 stylesheets -->
@@ -51,9 +51,9 @@
 		</xsl:call-template>
 	  </xsl:if>
 	  <xsl:if test="normalize-space($html.ie78css) != ''">
-		  <xsl:text disable-output-escaping="yes"><![CDATA[<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="]]></xsl:text>
+		  <xsl:text disable-output-escaping="yes">&lt;!--[if lt IE 9]>&lt;link rel="stylesheet" type="text/css" href="</xsl:text>
 		  <xsl:value-of select="$html.ie78css" />
-		  <xsl:text disable-output-escaping="yes"><![CDATA[" /><![endif]-->]]></xsl:text>
+		  <xsl:text disable-output-escaping="yes">" />&lt;![endif]--></xsl:text>
 	  </xsl:if>
 	</xsl:template>
 
@@ -74,9 +74,9 @@
 
 	<!-- Masthead -->
 	<xsl:template name="html.masthead">
-		<xsl:text disable-output-escaping="yes"><![CDATA[
-		<div class="masthead"></div>
-		]]></xsl:text>
+		<xsl:text disable-output-escaping="yes">
+		&lt;div class="masthead">&lt;/div>
+		</xsl:text>
 	</xsl:template>
 
 	<!-- Utilities -->
