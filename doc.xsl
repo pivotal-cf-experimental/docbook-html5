@@ -56,7 +56,6 @@
 ]]></xsl:text>
 		<xsl:choose>
 			<xsl:when test="/db:book">
-				<xsl:message><xsl:text>Processing a DocBook &lt;book&gt;</xsl:text></xsl:message>
 				<xsl:call-template name="html.body">
 					<xsl:with-param name="kind">book</xsl:with-param>
 					<xsl:with-param name="title" select="$doc.title" />
