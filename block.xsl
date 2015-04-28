@@ -144,10 +144,15 @@
 		</div>
 	</xsl:template>
 
-	<!-- <section>, <chapter>, <part> -->
-	<xsl:template match="//db:section|//db:chapter|//db:part|//db:refsection|//db:refsect1|//db:refsect2|//db:refsect3|//db:refsect4|//db:reference|//db:refentry" mode="body">
+	<!-- <chapter>, <part> -->
+	<xsl:template match="//db:chapter|//db:part|//db:refsection|//db:refsect1|//db:refsect2|//db:refsect3|//db:refsect4|//db:reference|//db:refentry" mode="body">
 		<xsl:call-template name="html.titleblock" />
 	</xsl:template>
+
+    <!-- <section> -->
+    <xsl:template match="//db:section" mode="body">
+      <xsl:call-template name="html.titleblock-section" />
+    </xsl:template>
 	
 	<xsl:template match="//db:refsynopsisdiv" mode="body">
 	  <xsl:param name="role" select="@role" />
@@ -295,6 +300,57 @@
 			<xsl:apply-templates select="node()" mode="body" />
 		</xsl:element>
 	</xsl:template>
+
+    <!-- Titleblock-section output -->
+    <xsl:template name="html.titleblock-section">
+      <xsl:param name="element" select="'section'" />
+      <xsl:param name="class" />
+      <xsl:param name="role" select="@role" />
+      <xsl:param name="id" select="normalize-space(@xml:id)" />
+      <xsl:param name="kind" select="local-name()" />
+      <xsl:param name="title.element" select="'h2'" />
+      <xsl:param name="subtitle.element" select="'h3'" />
+      <xsl:variable name="classes" select="normalize-space(concat($class, ' ', $role, ' ', $kind))" />
+      <xsl:variable name="title">
+        <xsl:choose>
+          <xsl:when test="db:title">
+            <xsl:copy-of select="db:title" />
+          </xsl:when>
+          <xsl:when test="db:refmeta/db:refentrytitle">
+            <xsl:copy-of select="db:refmeta/db:refentrytitle" />
+          </xsl:when>
+        </xsl:choose>
+      </xsl:variable>
+      <xsl:variable name="subtitle">
+        <xsl:choose>
+          <xsl:when test="db:subtitle">
+            <xsl:copy-of select="db:subtitle" />
+          </xsl:when>
+          <xsl:when test="db:refnamediv/db:refpurpose">
+            <xsl:copy-of select="db:refnamediv/db:refpurpose" />
+          </xsl:when>
+        </xsl:choose>
+      </xsl:variable>
+      <xsl:element name="{$element}">
+        <xsl:if test="$id != ''"><xsl:attribute name="id"><xsl:value-of select="$id" /></xsl:attribute></xsl:if>
+        <xsl:if test="$classes != ''"><xsl:attribute name="class"><xsl:value-of select="$classes" /></xsl:attribute></xsl:if>
+        <xsl:if test="normalize-space($title) != ''">
+          <xsl:element name="{$title.element}">
+            <xsl:for-each select="db:title">
+              <xsl:apply-templates select="node()" mode="body" />
+            </xsl:for-each>
+          </xsl:element>
+        </xsl:if>
+        <xsl:if test="normalize-space($subtitle) != ''">
+          <xsl:element name="{$subtitle.element}">
+            <xsl:for-each select="db:subtitle">
+              <xsl:apply-templates select="node()" mode="body" />
+            </xsl:for-each>
+          </xsl:element>
+        </xsl:if>
+        <xsl:apply-templates select="node()" mode="body" />
+      </xsl:element>
+    </xsl:template>
 
 	<!-- Un-titled block output -->
 	<xsl:template name="html.block">
