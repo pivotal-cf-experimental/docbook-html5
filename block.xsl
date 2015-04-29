@@ -153,7 +153,8 @@
     <xsl:template match="//db:section" mode="body">
       <xsl:call-template name="html.titleblock-section" />
     </xsl:template>
-	
+
+    <!-- <refsynopsisdiv> -->
 	<xsl:template match="//db:refsynopsisdiv" mode="body">
 	  <xsl:param name="role" select="@role" />
 	  <xsl:param name="kind" select="local-name()" />
