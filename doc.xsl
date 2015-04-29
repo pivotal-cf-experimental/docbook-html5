@@ -105,7 +105,6 @@
 		<header>
 			<xsl:call-template name="html.globalnav" />
 			<xsl:call-template name="html.masthead" />
-			<h1><xsl:value-of select="$title" /></h1>
 			<xsl:if test="normalize-space($subtitle) != ''">
 				<h2><xsl:value-of select="$subtitle" /></h2>
 			</xsl:if>
