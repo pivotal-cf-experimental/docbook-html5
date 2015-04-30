@@ -25,7 +25,8 @@
 	<xsl:include href="block.xsl" />	
 	<xsl:include href="inline.xsl" />
 	<xsl:include href="doc.xsl" />	
-	<xsl:include href="toc.xsl" />	
+	<xsl:include href="toc.xsl" />
+    <xsl:include href="erb.xsl" />
 
 	<!-- HTML5 doctype -->
 	<xsl:template name="html.doctype">
