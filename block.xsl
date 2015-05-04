@@ -52,7 +52,7 @@
 	<!-- <note> -->
 	<xsl:template match="//db:note" mode="body">
 		<xsl:call-template name="html.block">
-			<xsl:with-param name="kind">info</xsl:with-param>
+			<xsl:with-param name="kind">note</xsl:with-param>
 			<xsl:with-param name="element">aside</xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>			
